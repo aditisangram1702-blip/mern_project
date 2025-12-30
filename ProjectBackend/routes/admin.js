@@ -11,9 +11,15 @@ const config = require("../utils/config")
 //login for user 
 router.post("/login",(req,res)=>{
     const {email,password} = req.body
+    console.log(req.body);
+    
     const hashedPass = cryptojs.SHA256(password).toString()
     const sql =`select * from users where email = ? and password=?`
     pool.query(sql,[email,hashedPass],(error,data)=>{
+        console.log(error);
+        console.log(data);
+        
+        
         if(error){
             res.send(result.createResult(error))
         }

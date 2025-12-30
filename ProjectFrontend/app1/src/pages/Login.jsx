@@ -29,6 +29,7 @@ export default function Login(){
              console.log(result)
             if(result.status === "success"){
                 toast.success("Successfully login :)")
+                sessionStorage.setItem('token',result.data.token)
                 setloginStatus(true)
                 navigate('/home')
             }
@@ -60,4 +61,5 @@ export default function Login(){
             </div>
         </div>
     )
+    
 }
