@@ -6,7 +6,10 @@ import { Navigate, Route,Routes } from 'react-router'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Register from './pages/Register'
+import AddCourse from './pages/AddCourse'
+import AllCourses from './pages/AllCourses'
 import { createContext } from 'react'
+import ViewCourseDetails from './pages/ViewCourseDetails'
 
 export const loginContext = createContext();
 function App() {
@@ -16,7 +19,10 @@ function App() {
       <Routes>
         <Route path="/*" element={<Login />}/>
         <Route path="/home" element={loginStatus? <Home/> : <Navigate to="/"/>}/>
+        <Route path="/addCourse" element={loginStatus? <AddCourse /> : <Navigate to="/"/>}/>
+        <Route path ="/getCourses" element ={loginStatus? <AllCourses/>: <Navigate to="/"/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/view" element = {loginStatus ? <ViewCourseDetails/>:<Navigate to ="/"/>}/>
       </Routes>
       </loginContext.Provider>
       </>)

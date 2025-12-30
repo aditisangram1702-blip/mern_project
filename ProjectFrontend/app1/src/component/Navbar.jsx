@@ -19,6 +19,12 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link" aria-current="page" to="/register">Register</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" aria-current="page" to="/addCourse">Add Course</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" aria-current="page" to="/getCourses">All Course</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
